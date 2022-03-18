@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const hospitals = require("./schemas/hospitals_sch");
+const Hospitals = require("./schemas/hospitals_sch");
 
 router.get("/", async (req, res) => {
-    const doc = await hospitals.find({});
+    const doc = await Hospitals.find({});
     res.json(doc);
 });
 
 router.get("/:hospitalID", async (req, res) => {
-    const doc = await hospitals.find({ shop_id: parseInt(req.params.shopID) });
+    const doc = await Hospitals.find({ shop_id: parseInt(req.params.shopID) });
     res.json(doc);
 });
 

@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const petShopsSchema = mongoose.Schema({
   shop_id: {
     type: "Number",
-    unique: true
+    unique: true,
+    required: true,
   },
   shop_name: {
     type: "String",

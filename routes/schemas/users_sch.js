@@ -1,21 +1,24 @@
 const mongoose = require("mongoose");
 const userSchema = mongoose.Schema({
   uid: {
-    type: "Number",
-    unique: true
-  },
-  firstname: {
     type: "String",
+    unique: true,
+    required: true,
   },
-  surname: {
+  username: {
     type: "String",
+    unique: true,
+    required: true,
   },
-  user_tel: {
-    type: "String",
-  },
-  address: {
-    type: "String",
-  },
+  password: {type: String, required: true},
+  firstname: {type: String, required: true},
+  surname: {type: String, required: true},
+  address: String,
+  user_tel: String,  
+  date_create: {
+    type: Date, 
+    default: Date.now
+  }
 });
 
 const connection = mongoose.createConnection(
