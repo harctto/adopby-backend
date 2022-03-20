@@ -5,18 +5,12 @@ const petShopsSchema = mongoose.Schema({
     unique: true,
     required: true,
   },
-  shop_name: {
-    type: "String",
-  },
-  address: {
-    type: "String",
-  },
-  shop_tel: {
-    type: "String",
-  },
-  service_time: {
-    type: "String",
-  },
+  shop_name: String,
+  address: String,
+  shop_tel: String,
+  service_time: String,
+  latitude: Number,
+  longitude: Number
 });
 
 const connection = mongoose.createConnection(

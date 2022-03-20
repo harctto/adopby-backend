@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const hospitalsSchema = mongoose.Schema({
-  hospital_id: {
+const petPostSchema = mongoose.Schema({
+  shop_id: {
     type: "Number",
     unique: true,
     required: true,
   },
-  hospital_nam: String,
+  shop_name: String,
   address: String,
-  hospital_tel: String,
+  shop_tel: String,
   service_time: String,
   latitude: Number,
   longitude: Number
@@ -16,5 +16,5 @@ const hospitalsSchema = mongoose.Schema({
 const connection = mongoose.createConnection(
   `${process.env.DB_URI_PATH}adopby`
 );
-const hospitals = connection.model("hospitals", hospitalsSchema);
-module.exports = hospitals;
+const petposts = connection.model("petposts", petPostSchema);
+module.exports = petposts;
