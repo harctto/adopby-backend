@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const PetShops = require("./schemas/petShops_sch");
+const PetShops = require("../middleware/schemas/petShops_sch");
 
 router.get("/", async (req, res) => {
     const doc = await PetShops.find({});

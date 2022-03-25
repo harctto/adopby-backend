@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const petPostSchema = mongoose.Schema({
-  post_id: {
+const petLostSchema = mongoose.Schema({
+  pet_id: {
     type: "String",
     index: true,
     unique: true
@@ -9,8 +9,10 @@ const petPostSchema = mongoose.Schema({
   pet_type: String,
   pet_color: String,
   pet_sex: String,
+  pet_age: String,
   description: String,
   img_url: String,
+  last_seen: String,
   date_create: {
     type: Date,
     default: Date.now
@@ -22,5 +24,5 @@ const petPostSchema = mongoose.Schema({
 const connection = mongoose.createConnection(
   `${process.env.DB_URI_PATH}adopby`
 );
-const petposts = connection.model("petposts", petPostSchema);
-module.exports = petposts;
+const petlosts = connection.model("petlosts", petLostSchema);
+module.exports = petlosts;

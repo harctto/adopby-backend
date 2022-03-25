@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
-const Users = require("./schemas/users_sch")
+const Users = require("../middleware/schemas/users_sch")
 
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;

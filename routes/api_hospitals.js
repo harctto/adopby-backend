@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Hospitals = require("./schemas/hospitals_sch");
+const Hospitals = require("../middleware/schemas/hospitals_sch");
 
 router.get("/", async (req, res) => {
     const doc = await Hospitals.find({});
