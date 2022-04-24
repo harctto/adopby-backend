@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:post_id", async (req, res) => {
-    const doc = await PetPosts.find({ post_id: parseInt(req.params.post_id) });
+    const doc = await PetPosts.find({ post_id: req.params.post_id });
     res.json(doc);
 });
 
