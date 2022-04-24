@@ -3,7 +3,7 @@ const petPostSchema = mongoose.Schema({
   post_id: {
     type: "String",
     index: true,
-    unique: true
+    unique: true,
   },
   pet_name: String,
   pet_type: String,
@@ -11,13 +11,18 @@ const petPostSchema = mongoose.Schema({
   pet_sex: String,
   pet_age: String,
   description: String,
+  pet_address: String,
+  status: {
+    type: String,
+    default: "กำลังหาบ้าน",
+  },
   img_url: String,
   date_create: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   // user who post
-  uid: String
+  uid: String,
 });
 
 const connection = mongoose.createConnection(

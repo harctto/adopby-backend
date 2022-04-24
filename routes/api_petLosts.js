@@ -7,6 +7,11 @@ router.get("/", async (req, res) => {
     res.json(doc);
 });
 
+router.get("/:pet_id", async (req, res) => {
+    const doc = await PetLosts.find({ pet_id: parseInt(req.params.pet_id) });
+    res.json(doc);
+});
+
 router.post("/:uid", async (req, res) => {
     try {
         //Gen method

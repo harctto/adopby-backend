@@ -7,6 +7,11 @@ router.get("/", async (req, res) => {
     res.json(doc);
 });
 
+router.get("/:post_id", async (req, res) => {
+    const doc = await PetPosts.find({ post_id: parseInt(req.params.post_id) });
+    res.json(doc);
+});
+
 router.post("/:uid", async (req, res) => {
     try {
         //Gen method
