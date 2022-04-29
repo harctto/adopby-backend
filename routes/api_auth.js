@@ -45,4 +45,16 @@ router.post("/register", async (req, res) => {
     }
 });
 
+router.get('/:uid', async (req, res) => {
+  const doc = await Users.findOne({ uid: req.params.uid });
+  res.json({ 
+    uid: doc.uid,
+    username: doc.username,
+    firstname: doc.firstname,
+    surname: doc.surname,
+    user_tel: doc.user_tel,
+    address: doc.address
+  });
+})
+
 module.exports = router;
