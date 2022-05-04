@@ -23,7 +23,8 @@ const petLostSchema = mongoose.Schema({
     default: Date.now
   },
   // user who post
-  uid: String
+  uid: String,
+  price: String
 });
 
 const connection = mongoose.createConnection(
