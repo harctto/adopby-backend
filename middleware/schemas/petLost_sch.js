@@ -14,7 +14,7 @@ const petLostSchema = mongoose.Schema({
   pet_address: String,
   status: {
     type: String,
-    default: "กำลังหาบ้าน"
+    default: "กำลังตามหา"
   },
   img_url: String,
   last_seen: String,
