@@ -29,4 +29,15 @@ router.post("/:uid", async (req, res) => {
     }
 });
 
+router.post('/edit/:post_id', async (req, res) => {
+    try {
+        await PetPosts.findOneAndUpdate({
+            post_id: req.params.post_id
+        },(req.body))
+        res.json({ result: "success", detail: req.body });
+    } catch (err) {
+        res.json({ result: "failed", detail: err });
+    }
+})
+
 module.exports = router;

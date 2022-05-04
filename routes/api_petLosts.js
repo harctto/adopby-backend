@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const PetLosts = require("../middleware/schemas/petLost_sch");
+const { route } = require("./api_auth");
 
 router.get("/", async (req, res) => {
     const doc = await PetLosts.find({});
@@ -28,5 +29,16 @@ router.post("/:uid", async (req, res) => {
         res.json({ result: "failed", detail: err });
     }
 });
+
+router.post('/edit/:pet_id', async (req, res) => {
+    try {
+        await PetLosts.findOneAndUpdate({
+            pet_id: req.params.pet_id
+        },(req.body))
+        res.json({ result: "success", detail: req.body });
+    } catch (err) {
+        res.json({ result: "failed", detail: err });
+    }
+})
 
 module.exports = router;
