@@ -23,8 +23,8 @@ const petPostSchema = mongoose.Schema({
   },
   // user who post
   uid: String,
-});
-
+})
+ 
 const connection = mongoose.createConnection(
   `${process.env.DB_URI_PATH}adopby`
 );
